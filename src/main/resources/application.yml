@@ -1,0 +1,50 @@
+server:
+  port: 10334
+  tomcat:
+    uri-encoding: utf-8
+
+logging:
+  file: upLoader.log
+  level:
+    root: info
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+  datasource:
+    url: jdbc:mysql://10.205.66.164:6446/ccb_demo?useUnicode=true&allowMultiQueries=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: cpc
+    password: Passw0rd2018
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+fastdfs:
+  connect_timeout: 30
+  network_timeout: 60
+  charset: UTF-8
+  tracker_servers: 106.75.216.203:33308
+  http:
+    tracker_http_port: 8888
+    anti_steal_token: no
+    secret_key: FastDFS1234567890
+
+
+ftp:
+  Ftp_Host: 10.205.68.194
+  Ftp_Username: jsyh
+  FTP_Password: jsyh
+  # 如当前机器是ftp，则保持与ftp相同配置；反之配置文件下载临时目录
+  Ftp_Base_Dir: D:/ftp
+  # 如当前机器是ftp，则保持与ftp相同配置；反之配置文件下载临时目录
+  Ftp_Defart_Dir: /uploadDir_springcloud
+  Ftp_Port: 10021
+
+#文件保存服务器类型    0:ftp       1：fastdfs
+FileServer:
+  Type: 0
+
+file:
+  #  上传下载临时目录
+  Location_Default_Dir: /java/uploadDir
+  # ftp服务器是否部署在当前服务器上 1：是；  0：否
+  Is_Ftp_On_This_Server: 1
+
